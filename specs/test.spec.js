@@ -14,7 +14,19 @@ const wrapper = mount(TestComponent, {
 expect(wrapper.html()).toMatchSnapshot()
 })
 
-test('ListComponent Shallow', () => {
-  console.log(mount(List).html())
-  console.log(shallowMount(List).html())
+// test('ListComponent Shallow', () => {
+//   console.log(mount(List).html())
+//   console.log(shallowMount(List).html())
+// })
+
+test('ListComponent setData', async () => {
+  const wrapper = mount(List)
+  const movies = wrapper.vm.marvelMovies
+  const newData = { marvelMovies: [...movies, 'TheDuck']}
+  await wrapper.setData(newData)
+  console.log("Newdata:", newData)
+  console.log(wrapper.html())
+  expect(wrapper.html()).toMatchSnapshot()
+
+
 })
