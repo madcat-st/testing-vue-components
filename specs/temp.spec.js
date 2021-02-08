@@ -29,7 +29,7 @@ describe('computed', () => {
 })
 
 describe('watch', () => {
-  test('temp', () => {
+  test('temp', async () => {
     const wrapper = mount(Temprature, {
       propsData: {
         temp: 40
@@ -38,7 +38,7 @@ describe('watch', () => {
     const { vm } = wrapper
     expect(vm.degrees).toBe(40)
     expect(vm.type).toBe('celsius')
-    wrapper.setProps({
+    await wrapper.setProps({
       temp: '50f'
     })
     expect(vm.degrees).toBe(50)
