@@ -11,7 +11,7 @@ const wrapper = mount(TestComponent, {
 })
 
 //console.log(wrapper)
-expect(wrapper.html()).toMatchSnapshot()
+expect(wrapper).toMatchSnapshot()
 })
 
 // test('ListComponent Shallow', () => {
@@ -26,7 +26,7 @@ test('ListComponent setData', async () => {
   await wrapper.setData(newData)
   console.log("Newdata:", newData)
   console.log(wrapper.html())
-  expect(wrapper.html()).toMatchSnapshot()
+  expect(wrapper).toMatchSnapshot()
 
 
 })
