@@ -1,4 +1,4 @@
-import TestComponent from '@/test.vue'
+import TestComponent from '@/test'
 
 test('first-spec', () => {
 console.log(TestComponent)
